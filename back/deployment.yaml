@@ -16,7 +16,7 @@ spec:
       - image: 728156710202.dkr.ecr.ap-northeast-2.amazonaws.com/app-back:v92
         name: app-back
         envFrom:
-          - configMapRef:
-              name: app-back-configmap
+          - secretRef:
+              name: app-back-secret
         ports:
         - containerPort: 8000
