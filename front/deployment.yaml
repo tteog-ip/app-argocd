@@ -15,5 +15,8 @@ spec:
       containers:
       - image: 728156710202.dkr.ecr.ap-northeast-2.amazonaws.com/app-front:v40
         name: app-front
+        envFrom:
+        - configMapRef:
+            name: front-cm
         ports:
         - containerPort: 80
