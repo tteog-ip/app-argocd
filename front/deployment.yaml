@@ -15,6 +15,7 @@ spec:
       containers:
       - image: 728156710202.dkr.ecr.ap-northeast-2.amazonaws.com/app-front:v43
         name: app-front
+        command: ["/bin/sh", "-ec", "envsubst '$API_URL' < /etc/nginx/sites-available/default > /etc/nginx/sites-available/default && nginx -g 'daemon off;'"]
         envFrom:
         - configMapRef:
             name: front-cm
