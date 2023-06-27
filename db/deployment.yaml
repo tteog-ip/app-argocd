@@ -16,5 +16,5 @@ spec:
       - image: mysql:8.0.32-debian
         name: app-db
         envFrom:
-          - configMapRef:
-              name: app-db
+          - secretRef:
+              name: app-db-secret
