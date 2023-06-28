@@ -17,7 +17,7 @@ spec:
         name: app-back
         command: ["/bin/sh", "-c", "sleep 5 && python manage.py makemigrations && python manage.py migrate && gunicorn dr_tart.wsgi --bind 0.0.0.0:8000"]
         envFrom:
-          - secretRef:
-              name: app-back-secret
+          - configMapRef:
+              name: app-back-cm
         ports:
         - containerPort: 8000
